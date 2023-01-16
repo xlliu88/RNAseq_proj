@@ -1,0 +1,33 @@
+## install bowtie2
+sudo apt-get install bowtie2
+
+## install samtools
+sudo apt-get insatll samtools
+
+
+## or build from source - download source code.
+## install prequisters
+sudo apt-get install libbz2-dev
+sudo apt-get install libncurses5-dev
+sudo apt-get install liblzma-dev
+
+./configure --prefix=/lib
+make
+sudo make install
+
+## add path to $PATH environment
+export PATH=/lib/bin:$PATH
+
+## install tophat2
+sudo apt-get tophat
+
+## install HISAT2 - build from source
+sudo unzip unzip hisat2-2.1.0-source.zip
+cd hisat2-2.1.0
+make
+export PATH=~/hisat2-2.1.0:$PATH
+
+## install salmon - prebuild binary file
+sudo cp salmon-0.12.0_linux_x86_64.tar.gz /lib
+sudo tar -xvzf salmon-0.12.0_linux_x86_64.tar.gz
+export PATH=/lib/salmon-0.12.0_linux_x86_64/bin:$PATH
